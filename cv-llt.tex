@@ -1,0 +1,57 @@
+% Здравствуйте! Рад видеть вас здесь :)
+\documentclass[a4paper,skipsamekey,11pt,english,russian]{curve}
+
+\usepackage{settings}
+\usepackage{hyperref}
+\usepackage[T2A]{fontenc} 
+\usepackage[utf8]{inputenc}
+\ifxetexorluatex % Чтобы точно все работало.
+  \usepackage{fontspec} 
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage[medium,bold]{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage[p,osf,swashQ]{cochineal}
+  \usepackage{cabin}
+  \usepackage[varqu,varl,scale=0.9]{zi4}
+\fi
+
+\hypersetup{colorlinks=true, urlcolor=blue}
+
+\includecomment{fullonly}
+\leftheader{
+  {\LARGE\bfseries\sffamily Ряйккенен Даниил Витальевич}
+  \newline
+  {\large\bfseries\sffamily Junior Data Scientist}
+  \newline
+  \newline
+    \makefield{\faTelegram}{\texttt{SPB\_Ryaikkenen\_Daniil}}
+    % Ссылки некрасивые, но без идентификации HTTPS не работают.
+    \makefield{\faKaggle}{\href{https://kaggle.com/gallirium}{kaggle.com/gallirium}}
+    
+    \makefield{\faPhone}{\texttt{+7 (950) 009-71-52\kern 2.8em}}
+    \makefield{\faGithub}{\href{https://github.com/Gallirium}{github.com/Gallirium}}
+    
+    \makefield{\faEnvelope[regular]}{\texttt{gallirium@gmail.com\kern 2.1em}}
+    \makefield{\faLinkedin}{\href{https://linkedin.com/in/Gallirium}{linkedin.com/in/Gallirium}}
+}
+
+\rightheader{~}
+\begin{fullonly}
+\photo[r]{photo}
+\photoscale{0.2}
+\end{fullonly}
+
+\title{Curriculum Vitae}
+
+\begin{document}
+
+\makeheaders[c]
+\makerubric{education}
+\makerubric{workexp}
+\makerubric{skills}
+\makerubric{misc}
+\makerubric{about}
+
+\end{document}

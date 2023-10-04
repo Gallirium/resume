@@ -1,0 +1,83 @@
+\RequirePackage{silence}
+\WarningsOff[longtable]
+\WarningsOff[array]
+
+\usepackage{ifxetex,ifluatex}
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+
+\RequirePackage{graphicx}
+\RequirePackage[hyphens]{url}
+\RequirePackage{babel}
+\raggedright
+
+\RequirePackage[fixed]{fontawesome5}
+
+\newcommand{\smallcaps}[1]{\textsc{\lowercase{#1}}}
+
+\RequirePackage[a4paper,nohead,nofoot,hmargin=2.25cm,vmargin=0cm]{geometry}
+\RequirePackage{relsize}
+\RequirePackage[dvipsnames,svgnames]{xcolor}
+\RequirePackage{tikz}
+\usetikzlibrary{shapes,shadows}
+
+\RequirePackage{comment}
+\definecolor{SwishLineColour}{HTML}{88AC0B}
+\definecolor{MarkerColour}{HTML}{B6073F}
+
+\RequirePackage{csquotes}
+
+\setlength{\bibitemsep}{1.5ex}
+\setlength{\bibhang}{0em}
+\RequirePackage{xpatch}
+\xpretofieldformat{doi}
+  {\textcolor{MarkerColour!80!black}{\scriptsize\faLink}}
+  {}{}
+\xpretofieldformat{url}
+  {\textcolor{MarkerColour!80!black}{\scriptsize\faLink}}
+  {}{}
+
+\headerscale{1}
+%\setlength{\headerspace}{6pt}
+\rubricfont{\Large\bfseries\sffamily}
+\setlength{\rubricspace}{2pt}
+%\setlength{\rubricafterspace}{-9pt}
+\setlength{\rubricafterspace}{-12pt}
+\setlength{\subrubricspace}{3pt}
+\setlength{\subrubricbeforespace}{0pt}
+\def\@@rubrichead#1{%
+  \begin{tikzpicture}[baseline]%\
+  \shade[left color=SwishLineColour!60!white, right color=white] rectangle (\@almosttextwidth,2.5pt);
+  \node[font={\@rubricfont},inner sep=0pt,text ragged,anchor=south west,text depth=.5ex,text height=1.5ex] at (1pt,2pt) {#1};
+  \end{tikzpicture}%
+  \vspace\rubricspace%
+}
+
+\subrubricfont{\large\bfseries\sffamily}
+\subrubricalignment{l}
+
+\newcommand{\makefield}[2]{\makebox[1.5em]{\color{MarkerColour!80!black}#1} #2\hspace{2em}}
+
+\keyalignment{r}
+\rubricalignment{l}
+\renewcommand{\arraystretch}{1.25}
+\urlstyle{tt}
+
+\newcommand{\prefixmarker}[1]{\def\@prefixmarker{#1}}
+\def\@prefixmarker{\relscale{.9}\faBookmark}
+
+\prefix{%
+  \hspace*{-1ex}
+  \color{MarkerColour!80!black}\@prefixmarker%
+  \hspace*{0ex}%
+}
+
+
