@@ -35,7 +35,7 @@
 
 \RequirePackage{csquotes}
 
-\setlength{\bibitemsep}{1.5ex}
+\setlength{\bibitemsep}{0ex}
 \setlength{\bibhang}{0em}
 \RequirePackage{xpatch}
 \xpretofieldformat{doi}
@@ -48,15 +48,15 @@
 \headerscale{1}
 %\setlength{\headerspace}{6pt}
 \rubricfont{\Large\bfseries\sffamily}
-\setlength{\rubricspace}{2pt}
+\setlength{\rubricspace}{0pt}
 %\setlength{\rubricafterspace}{-9pt}
 \setlength{\rubricafterspace}{-12pt}
-\setlength{\subrubricspace}{3pt}
+\setlength{\subrubricspace}{0pt}
 \setlength{\subrubricbeforespace}{0pt}
 \def\@@rubrichead#1{%
   \begin{tikzpicture}[baseline]%\
-  \shade[left color=SwishLineColour!60!white, right color=white] rectangle (\@almosttextwidth,2.5pt);
-  \node[font={\@rubricfont},inner sep=0pt,text ragged,anchor=south west,text depth=.5ex,text height=1.5ex] at (1pt,2pt) {#1};
+  \shade[left color=SwishLineColour!60!white, right color=white] rectangle (\@almosttextwidth,1pt);
+  \node[font={\@rubricfont},inner sep=0pt,text ragged,anchor=south west,text depth=.5ex,text height=0ex] at (1pt,2pt) {#1};
   \end{tikzpicture}%
   \vspace\rubricspace%
 }
